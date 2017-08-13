@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.sunyu.activiti.dao.RolePermissionDao">
+
+    <!--保存数据selectKey若启用则添加成功后id会自动返回-->
+	<insert id="save" parameterType="RolePermission">
+	<!-- <selectKey resultType="int" keyProperty="id" order="AFTER">-->
+		<!--	SELECT LAST_INSERT_ID()-->
+	<!--	 </selectKey>-->
+		insert into role_permission(
+			role_id,
+			permission_id
+		) values (
+			#{roleId},
+			#{permissionId}
+		)
+	</insert>
+	<!--批量插入数据-->
+	<insert id="batchSave" parameterType="java.util.List">
+        insert into role_permission(
+			role_id,
+			permission_id
+		) values
+        <foreach collection="list" item="item" index="index" separator=",">
+            (
+			#{item.roleId},
+			#{item.permissionId}
+            )
+        </foreach>
+	</insert>
+    <!--更新数据-->
+    <update id="update" parameterType="RolePermission">
+    	update role_permission
+		<trim prefix="set" suffixOverrides=",">
+			<if test="roleId!=null">role_id = #{roleId},</if>
+			<if test="permissionId!=null">permission_id = #{permissionId},</if>
+		</trim>
+    	where id = #{id}
+    </update>
+    <!--删除数据-->
+	<delete id="delete" parameterType="int">
+		delete from role_permission where id = #{id}
+	</delete>
+
+    <!--根据id返回一条记录-->
+	<select id="queryById" parameterType="int" resultType="RolePermission">
+	    select 
+			rpid,
+			role_id,
+			permission_id
+ 		from role_permission
+		where id=#{id}
+	</select>
+
+	<!--查询权限列表-->
+    <select id="getRolePermissions" resultType="RolePermission" parameterType="long">
+        SELECT
+			rp.rpid,
+			rp.role_id,
+			rp.permission_id,
+			p.pid 'permission.pid',
+			p.permission_name 'permission.permission_name'
+		FROM
+			role_permission rp,
+			permission p
+		WHERE
+			p.pid = rp.permission_id
+		AND rp.role_id = #{roleId}
+    </select>
+
+</mapper>

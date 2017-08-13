@@ -1,0 +1,164 @@
+::-webkit-scrollbar-track{border-radius: 10px;-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0);background-color: #FFFFFF}
+::-webkit-scrollbar-thumb{background-color: rgba(0,0,0,0.05);border-radius: 10px;-webkit-box-shadow: inset 1px 1px 0 rgba(0,0,0,.1);}
+::-webkit-scrollbar-thumb{background-color: rgba(0,0,0,0.2);border-radius: 10px;-webkit-box-shadow: inset 1px 1px 0 rgba(0,0,0,.1);}
+::-webkit-scrollbar{width: 7px;height: 7px;}
+::-webkit-scrollbar-track,::-webkit-scrollbar-thumb{border-radius: 999px;}
+::-webkit-scrollbar-track{box-shadow: 1px 1px 5px rgba(0,0,0,.2) inset;}
+::-webkit-scrollbar-thumb{min-height: 20px;background-clip: content-box;box-shadow: 0 0 0 5px rgba(0,0,0,.2) inset;}
+::-webkit-scrollbar-corner{background: transparent;} 
+body,ol,ul,h1,h2,h3,h4,h5,h6,p,th,td,dl,dd,form,fieldset,legend,input,textarea,select{margin:0;padding:0}
+a{text-decoration: none}
+li{list-style: none}
+table{border-collapse:collapse;border-spacing:0}
+*{
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+a.btn-sm{padding:3px 25px;}
+.boco-tabs>a.boco-tab{
+	position: relative;
+	padding:5px 8px;
+	color:#FFFFFF;
+	display: inline-block;
+	background-color: #4ECAE4;
+	border-radius: 6px 10px 0 0;
+	font-size: 14px;
+	text-decoration: none;
+	-webkit-transition: all .3s ease;
+	-o-transition: all .3s ease;
+	transition: all .3s ease;
+}
+.boco-tabs>a.boco-tab-on{background-color: #4CB9E4;}
+.boco-tabs>a.boco-tab div{
+	position: absolute;right:-28px;bottom: 0;
+	width: 30px;height:24px;
+	border-top:12px solid transparent;
+	border-right:15px solid transparent;
+	border-left:15px solid #4ECAE4;
+	border-bottom:12px solid #4ECAE4;
+	-webkit-transition: all .3s ease;
+	-o-transition: all .3s ease;
+	transition: all .3s ease;
+}
+.boco-tabs>a.boco-tab-on div{
+	border-top:12px solid transparent;
+	border-right:15px solid transparent;
+	border-left:15px solid #4CB9E4;
+	border-bottom:12px solid #4CB9E4;
+	z-index: 100;
+}
+.page-wrapper{width: 99.6%}
+.boco-wrapper{
+	border:1px solid #DBDBDB;
+	padding:15px 10px;
+	background-color: #FFFFFF;
+	font-size:14px;
+	font-family: "微软雅黑";margin-bottom: 10px
+}
+.boco-blank{margin-bottom: 8px}
+.boco-blank div.ul-wrapper{border:1px solid #eeeeee;background-color: #FFFFFF;margin-top:20px;}
+.boco-blank a{text-decoration: none}
+.boco-wrapper .boco-group{
+	width: 100%;
+	margin-bottom: 10px;
+}
+.boco-wrapper .narrow-row{
+	padding:5px 20px;
+}
+.boco-wrapper .thinn-row{
+	padding:5px 100px;
+}
+.boco-wrapper .thinn-row .boco-group div.input-wrapper{width: 65%}
+.boco-wrapper .boco-group label{width: 80px;margin-top: 2px;color:#666666;}
+.boco-wrapper .boco-group label.label-lg{width: 140px;margin-top: 2px;color:#666666;}
+.boco-wrapper .boco-group label span{
+	display: inline-block;
+	width: 10px;height:10px;
+	color:red;
+	vertical-align: middle;
+    margin-bottom: 8px
+}
+.boco-wrapper .boco-group div.input-wrapper{width: 60.3%;float: left;border:1px solid #D8D8D8;padding:2px 5px;}
+.boco-wrapper .boco-group div.date-wrapper{width: 70%;float: left}
+.boco-wrapper .boco-group div.item-wrapper{width: 70%;float: left}
+.boco-wrapper .boco-group div.list-wrapper{width: 70%;float: left;margin-top: 2px}
+.boco-wrapper .boco-group div.list-wrapper input{margin-right: 10px;outline: none}
+.boco-wrapper .boco-group div.list-wrapper input[type=text]{width:100px;padding:0 5px;}
+.boco-wrapper .boco-group div.item-wrapper input{border:none;vertical-align: middle;}
+.boco-wrapper .boco-group div.date-wrapper input{border:1px solid #D8D8D8;padding:2px 5px;width: 38%;outline: none}
+.boco-wrapper .boco-group div.date-wrapper span{display:inline-block;width: 10%;text-align: center}
+.boco-wrapper .boco-group div.input-wrapper input{width: 100%;border:none;outline: none}
+.boco-wrapper .boco-group div.input-wrapper select{width: 100%;border:none;outline: none}
+.boco-wrapper .boco-group div.select-wrapper select{width: 50%;border:1px solid #D8D8D8;outline: none;padding:2px 5px;}
+.boco-wrapper .boco-group div.input-wrapper textarea{width: 100%;border:none;outline: none;resize: none;}
+.boco-wrapper .boco-group div.address-wrapper{border:1px solid #D8D8D8;float:left;width: 90%}
+.boco-wrapper .boco-group div.address-wrapper input{width:40%;border:none;outline: none;padding:2px 5px;}
+.boco-wrapper .boco-group div.address-wrapper select{width:12%;border:none;outline: none;border-right:1px solid #D8D8D8;padding:2px 5px;}
+
+.boco-wrapper .sheet-item{margin-bottom: 8px}
+.boco-form a.btn,.apply-form a.btn{margin-top:15px;padding-left:20px;padding-right:20px;}
+.apply-form h4{text-align: center;border-bottom: 1px solid #D8D8D8;font-size: 15px;padding:10px 0;}
+.apply-form h5{font-size: 14px;padding:10px 0;}
+.apply-form table.hospital-list{
+	width: 94.5%;border:1px solid #D8D8D8;margin-left: 25px;
+}
+.table-tab{
+	padding-left:15px;
+	padding-right:15px;
+}
+.table-tab-hide{display:none}
+/*.table-tab table{border:1px solid #D8D8D8;}*/
+.boco-blank table{background-color:#4CB9E4;font-size: 14px;font-family: "微软雅黑"}
+.boco-blank table thead tr th{background-color: #4CB9E4;color: #FFFFFF;text-align: center;border-left:1px solid #D8D8D8;outline: none;white-space: nowrap;}
+.boco-blank table thead,.boco-blank table tbody tr{
+	width: 100%;
+	display: table;
+	table-layout: fixed;
+}
+.boco-blank table thead{   
+    width: calc(100% - 7px);
+}
+.boco-blank table tbody{ 
+	height: 300px;
+    overflow-y: auto;
+    display: block;
+    border:1px solid #D8D8D8;
+    background-color: #FFFFFF;
+}
+.boco-blank table tbody tr td{;text-align: center;white-space: nowrap;border:none;text-overflow: ellipsis;overflow: hidden;}
+.boco-blank table tbody tr td a{margin-right: 5px}
+.boco-blank table tbody tr td a.info{color: #3FB86B}
+.boco-blank table tbody tr td a.deny{color: #4ECAE4}
+.boco-blank table tbody tr td a.edit{color: #4CB9E4}
+table tbody tr td.td-blank ,table thead tr th.td-blank {
+    width: 33px;
+}
+table tbody tr td.referal-code ,table thead tr th.referal-code {
+    width: 100px;
+}
+table tbody tr td.sex ,table thead tr th.sex {
+    width: 54px;
+}
+table tbody tr td.age ,table thead tr th.age {
+    width: 54px;
+}
+table tbody tr td.operate ,table thead tr th.operate {
+    width: 150px;
+}
+.pagination{margin:0;margin-bottom: 10px}
+@media screen and (max-width: 1440px){
+	.boco-blank table{font-size: 12px}
+	.boco-blank table tr th {padding:0;}
+    .boco-blank table tr th .th-inner{ 
+    	line-height: 24px;
+	    vertical-align: top;
+	    overflow: hidden;
+	    text-overflow: ellipsis;
+	    white-space: nowrap;}
+}
+/*自定义bootstrap-table样式*/
+.pagination>li>a, .pagination>li>span, .btn{
+	padding:2px 9px;
+}
+

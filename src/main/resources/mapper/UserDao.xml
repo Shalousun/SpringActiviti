@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.sunyu.activiti.dao.UserDao">
+
+	<resultMap type="User" id="UserMap">
+		<result property="uid" column="uid" />
+		<result property="username" column="username" />
+		<result property="password" column="password" />
+		<result property="tel" column="tel" />
+		<result property="age" column="age" />
+		<collection property="roleList" ofType="Role">
+			<id column="rid" property="rid"/>
+			<result column="role_name" property="roleName"/>
+		</collection>
+
+	</resultMap>
+
+	<!--保存数据selectKey若启用则添加成功后id会自动返回-->
+	<insert id="save" parameterType="User">
+	<!-- <selectKey resultType="int" keyProperty="id" order="AFTER">-->
+		<!--	SELECT LAST_INSERT_ID()-->
+	<!--	 </selectKey>-->
+		insert into user(
+			username,
+			password,
+			tel,
+			age
+		) values (
+			#{username},
+			#{password},
+			#{tel},
+			#{age}
+		)
+	</insert>
+    <!--更新数据-->
+    <update id="update" parameterType="User">
+    	update user
+		<trim prefix="set" suffixOverrides=",">
+			<if test="username!=null">username = #{username},</if>
+			<if test="password!=null">password = #{password},</if>
+			<if test="tel!=null">tel = #{tel},</if>
+			<if test="age!=null">age = #{age}</if>
+		</trim>
+    	where id = #{id}
+    </update>
+    <!--删除数据-->
+	<delete id="delete" parameterType="int">
+		delete from user where id = #{id}
+	</delete>
+
+    <!--根据id返回一条记录-->
+	<select id="queryById" parameterType="int" resultType="User">
+	    select 
+			uid,
+			username,
+			password,
+			tel,
+			age
+ 		from user
+		where id=#{id}
+	</select>
+
+	<!--分页记录-->
+    <select id="queryPage" resultMap="UserMap">
+       SELECT
+			u.uid,
+			u.username,
+			u. password,
+			u.tel,
+			u.age,
+			r.rid,
+			r.role_name
+		FROM
+			USER u,
+			role r,
+			user_role ur
+		WHERE
+			u.uid = ur.user_id
+		AND r.rid = ur.role_id
+    </select>
+
+	<!--根据用户名查询-->
+	<select id="queryByUserName" parameterType="string" resultType="User">
+		select * from user where username = #{username}
+	</select>
+
+</mapper>

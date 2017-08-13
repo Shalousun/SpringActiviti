@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.sunyu.activiti.dao.PermissionDao">
+
+
+	<!--保存数据selectKey若启用则添加成功后id会自动返回-->
+	<insert id="save" parameterType="Permission">
+	<!-- <selectKey resultType="int" keyProperty="id" order="AFTER">-->
+		<!--	SELECT LAST_INSERT_ID()-->
+	<!--	 </selectKey>-->
+		insert into permission(
+			permission_name
+		) values (
+			#{permissionName}
+		)
+	</insert>
+	<!--批量插入数据-->
+	<insert id="batchSave" parameterType="java.util.List">
+        insert into permission(
+			permission_name
+		) values
+        <foreach collection="list" item="item" index="index" separator=",">
+            (
+			#{item.permissionName}
+            )
+        </foreach>
+	</insert>
+    <!--更新数据-->
+    <update id="update" parameterType="Permission">
+    	update permission
+		<trim prefix="set" suffixOverrides=",">
+			<if test="permissionName!=null">permission_name = #{permissionName},</if>
+		</trim>
+    	where id = #{id}
+    </update>
+    <!--删除数据-->
+	<delete id="delete" parameterType="int">
+		delete from permission where id = #{id}
+	</delete>
+
+    <!--根据id返回一条记录-->
+	<select id="queryById" parameterType="int" resultType="Permission">
+	    select 
+			pid,
+			permission_name
+ 		from permission
+		where id=#{id}
+	</select>
+
+	<!--分页记录-->
+    <select id="queryPage" resultType="Permission">
+        select 
+			pid,
+			permission_name
+ 		from permission
+    </select>
+
+</mapper>

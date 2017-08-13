@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.sunyu.activiti.dao.UserRoleDao">
+
+    <!--保存数据selectKey若启用则添加成功后id会自动返回-->
+	<insert id="save" parameterType="UserRole">
+	<!-- <selectKey resultType="int" keyProperty="id" order="AFTER">-->
+		<!--	SELECT LAST_INSERT_ID()-->
+	<!--	 </selectKey>-->
+		insert into user_role(
+			user_id,
+			role_id,
+		) values (
+			#{userId},
+			#{roleId},
+		)
+	</insert>
+	<!--批量插入数据-->
+	<insert id="batchSave" parameterType="java.util.List">
+        insert into user_role(
+			user_id,
+			role_id,
+		) values
+        <foreach collection="list" item="item" index="index" separator=",">
+            (
+			#{item.userId},
+			#{item.roleId},
+            )
+        </foreach>
+	</insert>
+    <!--更新数据-->
+    <update id="update" parameterType="UserRole">
+    	update user_role
+		<trim prefix="set" suffixOverrides=",">
+			<if test="userId!=null">user_id = #{userId},</if>
+			<if test="roleId!=null">role_id = #{roleId},</if>
+		</trim>
+    	where id = #{id}
+    </update>
+    <!--删除数据-->
+	<delete id="delete" parameterType="int">
+		delete from user_role where id = #{id}
+	</delete>
+
+    <!--根据id返回一条记录-->
+	<select id="queryById" parameterType="int" resultType="UserRole">
+	    select 
+			urid,
+			user_id,
+			role_id,
+			id
+ 		from user_role
+		where id=#{id}
+	</select>
+
+	<!--根据userId查询-->
+    <select id="queryByUserId" resultType="UserRole" parameterType="int">
+        select 
+			urid,
+			user_id,
+			role_id
+ 		from user_role where user_id = #{userId}
+    </select>
+
+</mapper>

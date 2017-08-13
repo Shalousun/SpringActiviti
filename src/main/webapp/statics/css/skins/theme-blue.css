@@ -1,0 +1,157 @@
+/* * Skin: theme * ----------*/
+.skin-theme .main-header .navbar {
+    background-image: url(../../img/top.png);
+}
+
+.skin-theme .main-header .navbar .nav > li > a {
+    color: #ffffff;
+}
+
+.skin-theme .main-header .navbar .nav > li > a:hover,
+.skin-theme .main-header .navbar .nav > li > a:active,
+.skin-theme .main-header .navbar .nav > li > a:focus,
+.skin-theme .main-header .navbar .nav .open > a,
+.skin-theme .main-header .navbar .nav .open > a:hover,
+.skin-theme .main-header .navbar .nav .open > a:focus,
+.skin-theme .main-header .navbar .nav > .active > a {
+    background: rgba(0, 0, 0, 0.1);
+    color: #f6f6f6;
+}
+
+.skin-theme .main-header .navbar .sidebar-toggle {
+    color: #ffffff;
+}
+
+.skin-theme .main-header .navbar .sidebar-toggle:hover {
+    color: #f6f6f6;
+}
+
+.skin-theme .main-header .navbar .sidebar-toggle {
+    color: #fff;
+}
+
+@media (max-width: 767px) {
+    .skin-theme .main-header .navbar .dropdown-menu li.divider {
+        background-color: rgba(255, 255, 255, 0.1);
+    }
+
+    .skin-theme .main-header .navbar .dropdown-menu li a {
+        color: #fff;
+    }
+
+    .skin-theme .main-header .navbar .dropdown-menu li a:hover {
+        background: #367fa9;
+    }
+}
+
+.skin-theme .main-header .logo {
+    color: #ffffff;
+    border-bottom: 0 solid transparent;
+}
+
+/*.skin-theme .main-header .logo:hover{background-color: #357ca5;}*/
+.skin-theme .main-header li.user-header {
+    background-color: #3c8dbc;
+}
+
+.skin-theme .content-header {
+    background: transparent;
+}
+
+.skin-theme .wrapper,
+.skin-theme .main-sidebar,
+.skin-theme .left-side {
+   background:  #222d32;
+    /*background: linear-gradient(to top, #06A0DC, #0cb2cc); !* 标准的语法 *!*/
+    /*background: -webkit-linear-gradient(top, #06A0DC, #0cb2cc); !* Safari 5.1 - 6.0 *!*/
+    /*background: -o-linear-gradient(top, #06A0DC, #0cb2cc); !* Opera 11.1 - 12.0 *!*/
+    /*background: -moz-linear-gradient(top, #06A0DC, #0cb2cc); !* Firefox 3.6 - 15 *!*/
+
+}
+
+.skin-theme .user-panel > .info,
+.skin-theme .user-panel > .info > a {
+    color: #fff;
+}
+
+.skin-theme .sidebar-menu > li.header {
+    color: #4b646f;
+    /*background: #1a2226;*/
+}
+
+.skin-theme .sidebar-menu > li > a {
+    border-left: 3px solid transparent;
+    border-bottom: 1px solid #009BD6;
+}
+
+.skin-theme .sidebar-menu > li:hover > a,
+.skin-theme .sidebar-menu > li.active > a {
+    color: #ffffff;
+    border-left-color: #3c8dbc;
+}
+
+.skin-theme .sidebar a:hover {
+    text-decoration: none;
+}
+
+.skin-theme .treeview-menu > li > a {
+    color: #ffffff;
+}
+
+.skin-theme .treeview-menu > li.active > a,
+.skin-theme .treeview-menu > li > a:hover {
+    color: #3c8dbc;
+}
+
+.skin-theme .sidebar-form {
+    border-radius: 3px;
+    border: 1px solid #374850;
+    margin: 10px 10px;
+}
+
+.skin-theme .sidebar-form input[type="text"],
+.skin-theme .sidebar-form .btn {
+    box-shadow: none;
+    background-color: #374850;
+    border: 1px solid transparent;
+    height: 35px;
+    -webkit-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+}
+
+.skin-theme .sidebar-form input[type="text"] {
+    color: #666;
+    border-top-left-radius: 2px;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 2px;
+}
+
+.skin-theme .sidebar-form input[type="text"]:focus,
+.skin-theme .sidebar-form input[type="text"]:focus + .input-group-btn .btn {
+    background-color: #fff;
+    color: #666;
+}
+
+.skin-theme .sidebar-form input[type="text"]:focus + .input-group-btn .btn {
+    border-left-color: #fff;
+}
+
+.skin-theme .sidebar-form .btn {
+    color: #999;
+    border-top-left-radius: 0;
+    border-top-right-radius: 2px;
+    border-bottom-right-radius: 2px;
+    border-bottom-left-radius: 0;
+}
+
+.skin-theme.layout-top-nav .main-header > .logo {
+    background-color: #3c8dbc;
+    color: #ffffff;
+    border-bottom: 0 solid transparent;
+}
+
+.skin-theme.layout-top-nav .main-header > .logo:hover {
+    background-color: #3b8ab8;
+}
