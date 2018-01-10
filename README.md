@@ -1,2 +1,2 @@
-pringMVC与Activiti工作流整合的demo,使用的Spring版本为4.3.6,Activiti版本5.22.0，Demo使用经典的请假流程做了一个简单流程处理开发，同时也在Demo中集成
+SpringMVC与Activiti工作流整合的demo,使用的Spring版本为4.3.6,Activiti版本5.22.0，Demo使用经典的请假流程做了一个简单流程处理开发，同时也在Demo中集成
 了Activiti的explorer模块来在系统的web页面中自由设计。Demo所需的Sql脚本在resources/sql下，Demo登录所需账号和密码在user表中。
